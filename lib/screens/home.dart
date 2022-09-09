@@ -1,7 +1,8 @@
 // ignore_for_file: avoid_unnecessary_containers, prefer_const_constructors, prefer_const_literals_to_create_immutables, sized_box_for_whitespace
 
 import 'package:flutter/material.dart';
-import 'package:todo_app/constants/colors.dart';
+import '../constants/colors.dart';
+import '../widgets/todo_item.dart';
 
 class Home extends StatelessWidget {
   const Home({super.key});
@@ -26,10 +27,11 @@ class Home extends StatelessWidget {
                       style:
                           TextStyle(fontSize: 30, fontWeight: FontWeight.w500),
                     ),
-                  )
+                  ),
+                  ToDoItem(),
                 ],
               ),
-            )
+            ),
           ],
         ),
       ),
