@@ -20,6 +20,13 @@ class ToDoItem extends StatelessWidget {
           Icons.check_box,
           color: tdBlue,
         ),
+        title: Text(
+          'Check mail',
+          style: TextStyle(
+              color: tdBlack,
+              fontSize: 18,
+              decoration: TextDecoration.underline),
+        ),
       ),
     );
   }
