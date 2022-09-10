@@ -1,11 +1,13 @@
 // ignore_for_file: prefer_const_constructors, avoid_unnecessary_containers, sized_box_for_whitespace
 
 import 'package:flutter/material.dart';
+import 'package:todo_app/model/todo.dart';
 
 import '../constants/colors.dart';
 
 class ToDoItem extends StatelessWidget {
-  const ToDoItem({super.key});
+  final ToDo todo;
+  ToDoItem({super.key, required this.todo});
 
   @override
   Widget build(BuildContext context) {
@@ -23,11 +25,11 @@ class ToDoItem extends StatelessWidget {
           color: tdBlue,
         ),
         title: Text(
-          'Check mail',
+          todo.todoText!,
           style: TextStyle(
               color: tdBlack,
               fontSize: 18,
-              decoration: TextDecoration.lineThrough),
+              decoration: todo.isDone! ? TextDecoration.lineThrough : null),
         ),
         trailing: Container(
           padding: EdgeInsets.all(0),
