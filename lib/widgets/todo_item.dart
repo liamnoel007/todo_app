@@ -1,5 +1,4 @@
 // ignore_for_file: prefer_const_constructors, avoid_unnecessary_containers, sized_box_for_whitespace
-
 import 'package:flutter/material.dart';
 import 'package:todo_app/model/todo.dart';
 
@@ -7,7 +6,7 @@ import '../constants/colors.dart';
 
 class ToDoItem extends StatelessWidget {
   final ToDo todo;
-  ToDoItem({super.key, required this.todo});
+  const ToDoItem({super.key, required this.todo});
 
   @override
   Widget build(BuildContext context) {
