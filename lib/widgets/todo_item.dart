@@ -1,4 +1,4 @@
-// ignore_for_file: prefer_const_constructors, avoid_unnecessary_containers, sized_box_for_whitespace
+// ignore_for_file: prefer_const_constructors, avoid_unnecessary_containers, sized_box_for_whitespace, prefer_typing_uninitialized_variables
 import 'package:flutter/material.dart';
 import 'package:todo_app/model/todo.dart';
 
@@ -6,7 +6,14 @@ import '../constants/colors.dart';
 
 class ToDoItem extends StatelessWidget {
   final ToDo todo;
-  const ToDoItem({super.key, required this.todo});
+  final onToDoChanged;
+  final onDeleteItem;
+
+  const ToDoItem(
+      {super.key,
+      required this.todo,
+      required this.onToDoChanged,
+      required this.onDeleteItem});
 
   @override
   Widget build(BuildContext context) {
@@ -14,7 +21,9 @@ class ToDoItem extends StatelessWidget {
       margin: EdgeInsets.only(bottom: 20),
       child: ListTile(
         contentPadding: EdgeInsets.symmetric(vertical: 5, horizontal: 20),
-        onTap: () {},
+        onTap: () {
+          onToDoChanged(todo);
+        },
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(20),
         ),
@@ -43,7 +52,9 @@ class ToDoItem extends StatelessWidget {
               color: Colors.white,
             ),
             iconSize: 18,
-            onPressed: () {},
+            onPressed: () {
+              onDeleteItem(todo.id);
+            },
           ),
         ),
       ),
